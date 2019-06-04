@@ -23,9 +23,11 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     CGPoint point = [[touches anyObject] locationInView:self.view];
     if (point.y> [UIScreen mainScreen].bounds.size.height/2) {
-        [self presentViewController:[ViewControllerA new] animated:YES completion:nil];
+        UINavigationController *na = [[UINavigationController alloc] initWithRootViewController:[UIViewController new]];
+        [na pushViewController:[ViewControllerA new] animated:YES];
+        [self presentViewController:na animated:YES completion:nil];
     }else{
-        [self dismissViewControllerAnimated:YES completion:nil];
+        [arc4random()%2==0?self.navigationController:self dismissViewControllerAnimated:YES completion:nil];
     }
 }
 /*

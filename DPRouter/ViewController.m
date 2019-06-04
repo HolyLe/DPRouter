@@ -40,7 +40,7 @@
     [_dataSource addObject:[DPRouteDataModel text:@"映射" classString:@"JumpMapping"]];
     [_dataSource addObject:[DPRouteDataModel text:@"预存处消息" classString:@"SaveDataPre"]];
     [_dataSource addObject:[DPRouteDataModel text:@"消息传递与接收" classString:@"Message"]];
-    [self tableView];
+//    [self tableView];
     
     // Do any additional setup after loading the view.
 }
@@ -48,7 +48,10 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     CGPoint point = [[touches anyObject] locationInView:self.view];
     if (point.y> [UIScreen mainScreen].bounds.size.height/2) {
-        [self presentViewController:[ViewControllerA new] animated:YES completion:nil];
+        [self presentViewController:[[UINavigationController alloc] initWithRootViewController:[ViewControllerA new]] animated:YES completion:nil];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.navigationController pushViewController:[ViewControllerA new] animated:YES];
+        });
     }else{
         [self dismissViewControllerAnimated:YES completion:nil];
     }
