@@ -1,0 +1,528 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		730970F622A67F00004394DA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 730970F522A67F00004394DA /* AppDelegate.m */; };
+		730970F922A67F00004394DA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 730970F822A67F00004394DA /* ViewController.m */; };
+		730970FC22A67F00004394DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 730970FA22A67F00004394DA /* Main.storyboard */; };
+		730970FE22A67F00004394DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 730970FD22A67F00004394DA /* Assets.xcassets */; };
+		7309710122A67F00004394DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 730970FF22A67F00004394DA /* LaunchScreen.storyboard */; };
+		7309710422A67F00004394DA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7309710322A67F00004394DA /* main.m */; };
+		7309711822A67FBB004394DA /* DPRouteTuple.m in Sources */ = {isa = PBXBuildFile; fileRef = 7309710B22A67FBB004394DA /* DPRouteTuple.m */; };
+		7309711922A67FBB004394DA /* DPRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7309710C22A67FBB004394DA /* DPRouter.m */; };
+		7309711A22A67FBB004394DA /* NSObject+DPRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 7309710E22A67FBB004394DA /* NSObject+DPRoute.m */; };
+		7309711B22A67FBB004394DA /* DPRouteParsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 7309711522A67FBB004394DA /* DPRouteParsing.m */; };
+		7309711C22A67FBB004394DA /* DPRouteScheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 7309711622A67FBB004394DA /* DPRouteScheme.m */; };
+		7309711D22A67FBB004394DA /* DPBaseRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 7309711722A67FBB004394DA /* DPBaseRoute.m */; };
+		7309712A22A68086004394DA /* RouteB.m in Sources */ = {isa = PBXBuildFile; fileRef = 7309712922A68086004394DA /* RouteB.m */; };
+		7309712D22A68091004394DA /* RouteA.m in Sources */ = {isa = PBXBuildFile; fileRef = 7309712C22A68091004394DA /* RouteA.m */; };
+		7309713122A6844F004394DA /* JumpRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 7309713022A6844F004394DA /* JumpRoute.m */; };
+		7309713422A6846D004394DA /* JumpCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 7309713322A6846D004394DA /* JumpCommon.m */; };
+		7309713722A684E6004394DA /* JumpMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 7309713622A684E6004394DA /* JumpMapping.m */; };
+		7309713A22A68529004394DA /* SaveDataPre.m in Sources */ = {isa = PBXBuildFile; fileRef = 7309713922A68529004394DA /* SaveDataPre.m */; };
+		7309713D22A68547004394DA /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 7309713C22A68547004394DA /* Message.m */; };
+		7309714022A68667004394DA /* ViewControllerA.m in Sources */ = {isa = PBXBuildFile; fileRef = 7309713F22A68667004394DA /* ViewControllerA.m */; };
+		7309714322A68674004394DA /* ViewControllerB.m in Sources */ = {isa = PBXBuildFile; fileRef = 7309714222A68674004394DA /* ViewControllerB.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		730970F122A67F00004394DA /* DPRouter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DPRouter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		730970F422A67F00004394DA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		730970F522A67F00004394DA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		730970F722A67F00004394DA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		730970F822A67F00004394DA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		730970FB22A67F00004394DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		730970FD22A67F00004394DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7309710022A67F00004394DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7309710222A67F00004394DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7309710322A67F00004394DA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7309710B22A67FBB004394DA /* DPRouteTuple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRouteTuple.m; sourceTree = "<group>"; };
+		7309710C22A67FBB004394DA /* DPRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRouter.m; sourceTree = "<group>"; };
+		7309710D22A67FBB004394DA /* DPRouteParsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRouteParsing.h; sourceTree = "<group>"; };
+		7309710E22A67FBB004394DA /* NSObject+DPRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DPRoute.m"; sourceTree = "<group>"; };
+		7309710F22A67FBB004394DA /* DPBaseRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPBaseRoute.h; sourceTree = "<group>"; };
+		7309711022A67FBB004394DA /* DPRouteScheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRouteScheme.h; sourceTree = "<group>"; };
+		7309711122A67FBB004394DA /* DPRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRouter.h; sourceTree = "<group>"; };
+		7309711222A67FBB004394DA /* DPRouter+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DPRouter+Private.h"; sourceTree = "<group>"; };
+		7309711322A67FBB004394DA /* DPRouteTuple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRouteTuple.h; sourceTree = "<group>"; };
+		7309711422A67FBB004394DA /* NSObject+DPRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DPRoute.h"; sourceTree = "<group>"; };
+		7309711522A67FBB004394DA /* DPRouteParsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRouteParsing.m; sourceTree = "<group>"; };
+		7309711622A67FBB004394DA /* DPRouteScheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRouteScheme.m; sourceTree = "<group>"; };
+		7309711722A67FBB004394DA /* DPBaseRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPBaseRoute.m; sourceTree = "<group>"; };
+		7309712822A68086004394DA /* RouteB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RouteB.h; sourceTree = "<group>"; };
+		7309712922A68086004394DA /* RouteB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RouteB.m; sourceTree = "<group>"; };
+		7309712B22A68091004394DA /* RouteA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RouteA.h; sourceTree = "<group>"; };
+		7309712C22A68091004394DA /* RouteA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RouteA.m; sourceTree = "<group>"; };
+		7309712F22A6844F004394DA /* JumpRoute.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JumpRoute.h; sourceTree = "<group>"; };
+		7309713022A6844F004394DA /* JumpRoute.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JumpRoute.m; sourceTree = "<group>"; };
+		7309713222A6846D004394DA /* JumpCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JumpCommon.h; sourceTree = "<group>"; };
+		7309713322A6846D004394DA /* JumpCommon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JumpCommon.m; sourceTree = "<group>"; };
+		7309713522A684E6004394DA /* JumpMapping.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JumpMapping.h; sourceTree = "<group>"; };
+		7309713622A684E6004394DA /* JumpMapping.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JumpMapping.m; sourceTree = "<group>"; };
+		7309713822A68529004394DA /* SaveDataPre.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SaveDataPre.h; sourceTree = "<group>"; };
+		7309713922A68529004394DA /* SaveDataPre.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SaveDataPre.m; sourceTree = "<group>"; };
+		7309713B22A68547004394DA /* Message.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
+		7309713C22A68547004394DA /* Message.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
+		7309713E22A68667004394DA /* ViewControllerA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerA.h; sourceTree = "<group>"; };
+		7309713F22A68667004394DA /* ViewControllerA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllerA.m; sourceTree = "<group>"; };
+		7309714122A68674004394DA /* ViewControllerB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerB.h; sourceTree = "<group>"; };
+		7309714222A68674004394DA /* ViewControllerB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllerB.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		730970EE22A67F00004394DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		730970E822A67F00004394DA = {
+			isa = PBXGroup;
+			children = (
+				730970F322A67F00004394DA /* DPRouter */,
+				730970F222A67F00004394DA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		730970F222A67F00004394DA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				730970F122A67F00004394DA /* DPRouter.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		730970F322A67F00004394DA /* DPRouter */ = {
+			isa = PBXGroup;
+			children = (
+				7309710A22A67FBB004394DA /* Route */,
+				730970F422A67F00004394DA /* AppDelegate.h */,
+				730970F522A67F00004394DA /* AppDelegate.m */,
+				7309711E22A68027004394DA /* A */,
+				7309711F22A6803A004394DA /* B */,
+				730970F722A67F00004394DA /* ViewController.h */,
+				730970F822A67F00004394DA /* ViewController.m */,
+				7309712E22A68430004394DA /* JumpRoute */,
+				730970FA22A67F00004394DA /* Main.storyboard */,
+				730970FD22A67F00004394DA /* Assets.xcassets */,
+				730970FF22A67F00004394DA /* LaunchScreen.storyboard */,
+				7309710222A67F00004394DA /* Info.plist */,
+				7309710322A67F00004394DA /* main.m */,
+			);
+			path = DPRouter;
+			sourceTree = "<group>";
+		};
+		7309710A22A67FBB004394DA /* Route */ = {
+			isa = PBXGroup;
+			children = (
+				7309711122A67FBB004394DA /* DPRouter.h */,
+				7309710C22A67FBB004394DA /* DPRouter.m */,
+				7309710F22A67FBB004394DA /* DPBaseRoute.h */,
+				7309711722A67FBB004394DA /* DPBaseRoute.m */,
+				7309710D22A67FBB004394DA /* DPRouteParsing.h */,
+				7309711522A67FBB004394DA /* DPRouteParsing.m */,
+				7309711022A67FBB004394DA /* DPRouteScheme.h */,
+				7309711622A67FBB004394DA /* DPRouteScheme.m */,
+				7309711322A67FBB004394DA /* DPRouteTuple.h */,
+				7309710B22A67FBB004394DA /* DPRouteTuple.m */,
+				7309711422A67FBB004394DA /* NSObject+DPRoute.h */,
+				7309710E22A67FBB004394DA /* NSObject+DPRoute.m */,
+				7309711222A67FBB004394DA /* DPRouter+Private.h */,
+			);
+			path = Route;
+			sourceTree = "<group>";
+		};
+		7309711E22A68027004394DA /* A */ = {
+			isa = PBXGroup;
+			children = (
+				7309712022A68065004394DA /* C */,
+				7309712122A68065004394DA /* M */,
+				7309712222A68065004394DA /* Other */,
+				7309712322A68065004394DA /* V */,
+			);
+			path = A;
+			sourceTree = "<group>";
+		};
+		7309711F22A6803A004394DA /* B */ = {
+			isa = PBXGroup;
+			children = (
+				7309712622A6806F004394DA /* C */,
+				7309712422A6806F004394DA /* M */,
+				7309712522A6806F004394DA /* Other */,
+				7309712722A6806F004394DA /* V */,
+			);
+			path = B;
+			sourceTree = "<group>";
+		};
+		7309712022A68065004394DA /* C */ = {
+			isa = PBXGroup;
+			children = (
+				7309713E22A68667004394DA /* ViewControllerA.h */,
+				7309713F22A68667004394DA /* ViewControllerA.m */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		7309712122A68065004394DA /* M */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		7309712222A68065004394DA /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				7309712B22A68091004394DA /* RouteA.h */,
+				7309712C22A68091004394DA /* RouteA.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		7309712322A68065004394DA /* V */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		7309712422A6806F004394DA /* M */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		7309712522A6806F004394DA /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				7309712822A68086004394DA /* RouteB.h */,
+				7309712922A68086004394DA /* RouteB.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		7309712622A6806F004394DA /* C */ = {
+			isa = PBXGroup;
+			children = (
+				7309714122A68674004394DA /* ViewControllerB.h */,
+				7309714222A68674004394DA /* ViewControllerB.m */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		7309712722A6806F004394DA /* V */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		7309712E22A68430004394DA /* JumpRoute */ = {
+			isa = PBXGroup;
+			children = (
+				7309713222A6846D004394DA /* JumpCommon.h */,
+				7309713322A6846D004394DA /* JumpCommon.m */,
+				7309712F22A6844F004394DA /* JumpRoute.h */,
+				7309713022A6844F004394DA /* JumpRoute.m */,
+				7309713522A684E6004394DA /* JumpMapping.h */,
+				7309713622A684E6004394DA /* JumpMapping.m */,
+				7309713822A68529004394DA /* SaveDataPre.h */,
+				7309713922A68529004394DA /* SaveDataPre.m */,
+				7309713B22A68547004394DA /* Message.h */,
+				7309713C22A68547004394DA /* Message.m */,
+			);
+			path = JumpRoute;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		730970F022A67F00004394DA /* DPRouter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7309710722A67F00004394DA /* Build configuration list for PBXNativeTarget "DPRouter" */;
+			buildPhases = (
+				730970ED22A67F00004394DA /* Sources */,
+				730970EE22A67F00004394DA /* Frameworks */,
+				730970EF22A67F00004394DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DPRouter;
+			productName = DPRouter;
+			productReference = 730970F122A67F00004394DA /* DPRouter.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		730970E922A67F00004394DA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "麻小亮";
+				TargetAttributes = {
+					730970F022A67F00004394DA = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 730970EC22A67F00004394DA /* Build configuration list for PBXProject "DPRouter" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 730970E822A67F00004394DA;
+			productRefGroup = 730970F222A67F00004394DA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				730970F022A67F00004394DA /* DPRouter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		730970EF22A67F00004394DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7309710122A67F00004394DA /* LaunchScreen.storyboard in Resources */,
+				730970FE22A67F00004394DA /* Assets.xcassets in Resources */,
+				730970FC22A67F00004394DA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		730970ED22A67F00004394DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7309712D22A68091004394DA /* RouteA.m in Sources */,
+				7309713122A6844F004394DA /* JumpRoute.m in Sources */,
+				7309711D22A67FBB004394DA /* DPBaseRoute.m in Sources */,
+				730970F922A67F00004394DA /* ViewController.m in Sources */,
+				7309713722A684E6004394DA /* JumpMapping.m in Sources */,
+				7309713A22A68529004394DA /* SaveDataPre.m in Sources */,
+				7309711B22A67FBB004394DA /* DPRouteParsing.m in Sources */,
+				7309711C22A67FBB004394DA /* DPRouteScheme.m in Sources */,
+				7309714022A68667004394DA /* ViewControllerA.m in Sources */,
+				7309710422A67F00004394DA /* main.m in Sources */,
+				7309713D22A68547004394DA /* Message.m in Sources */,
+				7309714322A68674004394DA /* ViewControllerB.m in Sources */,
+				7309711922A67FBB004394DA /* DPRouter.m in Sources */,
+				7309711A22A67FBB004394DA /* NSObject+DPRoute.m in Sources */,
+				7309713422A6846D004394DA /* JumpCommon.m in Sources */,
+				7309712A22A68086004394DA /* RouteB.m in Sources */,
+				7309711822A67FBB004394DA /* DPRouteTuple.m in Sources */,
+				730970F622A67F00004394DA /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		730970FA22A67F00004394DA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				730970FB22A67F00004394DA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		730970FF22A67F00004394DA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7309710022A67F00004394DA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7309710522A67F00004394DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7309710622A67F00004394DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7309710822A67F00004394DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DPRouter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.holyle.www.DPRouter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7309710922A67F00004394DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DPRouter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.holyle.www.DPRouter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		730970EC22A67F00004394DA /* Build configuration list for PBXProject "DPRouter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7309710522A67F00004394DA /* Debug */,
+				7309710622A67F00004394DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7309710722A67F00004394DA /* Build configuration list for PBXNativeTarget "DPRouter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7309710822A67F00004394DA /* Debug */,
+				7309710922A67F00004394DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 730970E922A67F00004394DA /* Project object */;
+}
