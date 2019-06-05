@@ -27,6 +27,7 @@
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView * tableView;
 @property (nonatomic, strong) NSMutableArray <DPRouteDataModel *>* dataSource;
+@property (nonatomic, strong) JumpCommon * common;
 @end
 
 @implementation ViewController
@@ -40,7 +41,8 @@
     [_dataSource addObject:[DPRouteDataModel text:@"映射" classString:@"JumpMapping"]];
     [_dataSource addObject:[DPRouteDataModel text:@"预存处消息" classString:@"SaveDataPre"]];
     [_dataSource addObject:[DPRouteDataModel text:@"消息传递与接收" classString:@"Message"]];
-//    [self tableView];
+    
+    [self tableView];
     
     // Do any additional setup after loading the view.
 }
@@ -71,8 +73,10 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     JumpCommon *common = [NSClassFromString(self.dataSource[indexPath.row].classString) new];
     [common jumpMethod];
+    self.common = common;
 }
 
 

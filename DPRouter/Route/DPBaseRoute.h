@@ -29,13 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSString *)url_identify;
 
-
-/**
- 当前所在链路
- */
-@property (nonatomic, copy, readonly) NSString * currentScheme;
-
-
+@property (nonatomic, weak) DPRouteScheme * scheme;
 /**
  主键Id
  */

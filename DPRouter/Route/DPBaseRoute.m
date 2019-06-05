@@ -70,8 +70,6 @@ static NSString *DPBaseRouteParameters = @"kDPBaseRouteParameters";
 
 @property (nonatomic, strong) DPLevelSearch * levelSearch;
 
-@property (nonatomic, weak) DPRouteScheme * scheme;
-
 @end
 
 
@@ -107,9 +105,7 @@ static NSString *DPBaseRouteParameters = @"kDPBaseRouteParameters";
     return [NSString stringWithFormat:@"%@%@",[[self class]url_identify]?:@"", self.primaryKey];
 }
 
-- (NSString *)currentScheme{
-    return self.scheme.name;
-}
+
 
 - (NSString *)primaryKey{
     NSString *key = [[self class] getRoutePrimaryKey:self.storeData[DPBaseRouteParameters]];
@@ -128,7 +124,7 @@ static NSString *DPBaseRouteParameters = @"kDPBaseRouteParameters";
     }
     [array addObject:tuple];
     [self unlock];
-    NSInteger count = array.count;
+    NSInteger count = self.observeBlocks.count;
     if (_observerCount == 0 && count > 0) {
         [self storeIfNeed];
     }
@@ -138,6 +134,10 @@ static NSString *DPBaseRouteParameters = @"kDPBaseRouteParameters";
         [array removeObject:tuple];
         [self unlock];
         NSInteger count = array.count;
+        if (count == 0) {
+            [self->_observeBlocks removeObjectForKey:type];
+        }
+        count = self->_observeBlocks.count;
         if (self->_observerCount > 0 && count == 0) {
             [self removeIfNeed];
         }
@@ -146,7 +146,8 @@ static NSString *DPBaseRouteParameters = @"kDPBaseRouteParameters";
 }
 
 - (void)postRouteType:(NSString *)type tuple:(DPRouteTuple *)tuple routeBack:(nonnull void (^)(id _Nonnull, DPBaseRoute * _Nonnull))routeBack{
-    [self lock];
+    if (self.observeBlocks.count == 0) return;
+    [self lock];    
     NSArray *array = [self.observeBlocks[type] copy];
     [self unlock];
     if (array.count > 0) {
@@ -192,7 +193,7 @@ static NSString *DPBaseRouteParameters = @"kDPBaseRouteParameters";
 
 - (void)openUrl:(NSString *)url para:(nonnull NSDictionary *)para onScheme:(nonnull NSString *)scheme hanle:(nonnull void (^)(BOOL, DPRouteTuple * _Nonnull))hanle{
     DPRouteScheme *routeScheme = self.scheme;
-    if (![self.currentScheme isEqualToString:scheme]) {
+    if (![self.scheme.name isEqualToString:scheme]) {
         DPRouteScheme *preScheme = [[DPRouter router] schemeWithName:scheme];
         if (preScheme == nil) {
             preScheme = [DPRouter router].currentScheme;
@@ -284,13 +285,13 @@ static NSString *DPBaseRouteParameters = @"kDPBaseRouteParameters";
 }
 
 - (void)storeIfNeed{
-    if (_observerCount > 0 || _storeCount > 0) {
+    if (self.observeBlocks.count > 0 || self.storeData.count > 0) {
         [self store];
     }
 }
 
 - (void)removeIfNeed{
-    if (_observerCount == 0 && _storeCount == 0) {
+    if (self.observeBlocks.count == 0 && self.storeData.count == 0) {
         [self remove];
     }
 }
@@ -308,14 +309,19 @@ static NSString *DPBaseRouteParameters = @"kDPBaseRouteParameters";
     }
     return _levelSearch;
 }
-
+- (void)dealloc
+{
+    
+}
 @end
 
 @implementation DPBaseRoute (LifeCircyle)
 
 - (void)store{
     if (_isStore) return;
-    [[[DPRouter router] schemeWithName:@"kdp_global_scheme"] addRoute:self];
+    _isStore = YES;
+    self.scheme = [DPRouter router].globalScheme;
+    [[DPRouter router].globalScheme addRoute:self];
 }
 
 - (void)addToCurentSchemeHandle:(void (^)(DPRouteScheme * _Nonnull, DPBaseRoute * _Nonnull))handle{
@@ -350,7 +356,7 @@ static NSString *DPBaseRouteParameters = @"kDPBaseRouteParameters";
     if (self.dismiss) {
         self.dismiss(self);
     }
-    [[[DPRouter router] schemeWithName:self.currentScheme] removeRoute:self];
+    [self.scheme removeRoute:self];
 }
 
 - (void)setDismiss:(void (^)(DPBaseRoute * _Nonnull))dismiss{

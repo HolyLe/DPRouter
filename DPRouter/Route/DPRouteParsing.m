@@ -8,12 +8,35 @@
 
 #import "DPRouteParsing.h"
 
+@implementation NSString (DPRoute)
+
+- (NSString *)stringByURLDecode{
+    if ([self respondsToSelector:@selector(stringByRemovingPercentEncoding)]) {
+        return [self stringByRemovingPercentEncoding];
+    } else {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        CFStringEncoding en = CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding);
+        NSString *decoded = [self stringByReplacingOccurrencesOfString:@"+"
+                                                            withString:@" "];
+        decoded = (__bridge_transfer NSString *)
+        CFURLCreateStringByReplacingPercentEscapesUsingEncoding(
+                                                                NULL,
+                                                                (__bridge CFStringRef)decoded,
+                                                                CFSTR(""),
+                                                                en);
+        return decoded;
+#pragma clang diagnostic pop
+    }
+}
+
+@end
 @interface DPRouteParsing ()
 @property (nonatomic, copy) NSString * scheme;
 @property (nonatomic, copy) NSString * pathComponents;
 @property (nonatomic, copy) NSArray * paths;
 @property (nonatomic, copy) NSString * parameterString;
-@property (nonatomic, strong) NSDictionary * parameters;
+@property (nonatomic, strong) NSMutableDictionary * parameters;
 @end
 @implementation DPRouteParsing
 
@@ -23,7 +46,7 @@
 
 - (instancetype)initWithUrlString:(NSString *)url{
     if (self = [super init]) {
-        [self parsing:url];
+        [self parsing:[url stringByURLDecode]];
     }
     return self;
 }
@@ -41,7 +64,7 @@
             NSArray *para = [parameterString componentsSeparatedByString:@"="];
             [dic setValue:[para lastObject] forKey:[para firstObject]];
         }
-        _parameters = dic.copy;
+        [_parameters addEntriesFromDictionary: dic];
     }
     NSRange indexRange = [string rangeOfString:@"https://"];
     if (indexRange.location == NSNotFound) {
@@ -86,4 +109,13 @@
     dic[@"parameters"] = _parameters?:@{};
     return [NSString stringWithFormat:@"%@", dic.copy];
 }
+
+
+- (NSMutableDictionary *)parameters{
+    if (!_parameters) {
+        _parameters = [NSMutableDictionary dictionary];
+    }
+    return _parameters;
+}
+
 @end

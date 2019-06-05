@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "ViewControllerA.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +17,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    ViewControllerA *a = [ViewControllerA new];
+    a.title = NSStringFromSelector(_cmd);
+    [(UINavigationController *)self.window.rootViewController pushViewController:a animated:YES];
     return YES;
 }
 
@@ -41,6 +45,14 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
+
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
+    ViewControllerA *a = [ViewControllerA new];
+    a.title = NSStringFromSelector(_cmd);
+    [(UINavigationController *)self.window.rootViewController pushViewController:a animated:YES];
+    return YES;
+}
+
 
 
 - (void)applicationWillTerminate:(UIApplication *)application {

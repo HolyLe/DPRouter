@@ -15,7 +15,6 @@
 }
 
 - (void)setup{
-    
     [self registerUrl:@"aa" handle:^BOOL(NSString * _Nonnull url, NSMutableDictionary * _Nonnull para, DPBaseRoute * _Nonnull route) {
         NSLog(@"调用方法");
         [route remove];

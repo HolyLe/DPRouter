@@ -16,6 +16,8 @@
 
 - (void)setup{
     [self registerUrl:@"bb" handle:^BOOL(NSString * _Nonnull url, NSMutableDictionary * _Nonnull para, DPBaseRoute * _Nonnull route) {
+        NSLog(@"routeB bb");
+        [route remove];
         return YES;
     }];
 }

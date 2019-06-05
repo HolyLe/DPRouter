@@ -11,7 +11,7 @@
 #import "DPRouteParsing.h"
 NS_ASSUME_NONNULL_BEGIN
 
-extern NSString *dp_global_scheme;
+
 typedef NS_ENUM(NSUInteger, DPRouteUnPatsingUrlErrorType) {
     DPRouteUnPatsingUrlErrorTypeClass,
     DPRouteUnPatsingUrlErrorTypeMethod
@@ -23,14 +23,21 @@ typedef NS_ENUM(NSUInteger, DPRouteUnPatsingUrlErrorType) {
 @property (nonatomic, strong, readonly) DPRouteScheme * currentScheme;
 
 /**
+ 全局链，只用作保存route
+ */
+@property (nonatomic, strong, readonly) DPRouteScheme * globalScheme;
+/**
  打开一个路由
  */
 - (void)openRouteUrl:(NSString *)url;
 
-@property (nonatomic, copy) BOOL (^unParsingUrl) (DPRouteParsing *parsing, DPBaseRoute *__nullable route,DPRouteUnPatsingUrlErrorType errorStatus);
+- (void)openRouteUrl:(NSString *)url withPara:(NSDictionary *)dic;
+
 /**
- 导航路由链
+ 没有找到路由的回调
  */
+@property (nonatomic, copy) BOOL (^unParsingUrl) (DPRouteParsing *parsing, DPBaseRoute *__nullable route,DPRouteUnPatsingUrlErrorType errorStatus);
+
 #pragma mark - Scheme -
 - (void)registerScheme:(NSString *)scheme handle:(void (^) (DPRouteScheme *scheme))handle;
 
@@ -40,19 +47,18 @@ typedef NS_ENUM(NSUInteger, DPRouteUnPatsingUrlErrorType) {
 
 - (DPRouteScheme *)schemeWithName:(NSString *)name;
 
-/**
- 路由模块
- */
 #pragma mark - Route -
 
 - (DPBaseRoute *)routeWithUrl:(NSString *)url;
 
+#pragma mark - 路由映射 -
 - (void)routeMapOriginalUrl:(NSString *)originalUrl map:(NSString *)mapUrl;
 
 - (void)routeMapOriginalScheme:(NSString *)originalScheme map:(NSString *)mapScheme;
 
 @end
 
+#pragma mark - private -
 /**
  分级搜索
  */

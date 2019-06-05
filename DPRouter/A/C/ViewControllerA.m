@@ -27,7 +27,7 @@
         [na pushViewController:[ViewControllerA new] animated:YES];
         [self presentViewController:na animated:YES completion:nil];
     }else{
-        [arc4random()%2==0?self.navigationController:self dismissViewControllerAnimated:YES completion:nil];
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
 /*

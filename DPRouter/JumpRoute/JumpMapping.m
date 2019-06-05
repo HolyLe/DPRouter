@@ -9,5 +9,9 @@
 #import "JumpMapping.h"
 
 @implementation JumpMapping
-
+- (void)jumpMethod{
+    [[DPRouter router] routeMapOriginalUrl:@"B/C" map:@"E"];
+    [[DPRouter router] openRouteUrl:@"B/C/bb"];
+    [[DPRouter router] openRouteUrl:@"E/bb"];
+}
 @end

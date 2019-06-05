@@ -9,5 +9,10 @@
 #import "SaveDataPre.h"
 
 @implementation SaveDataPre
-
+- (void)jumpMethod{
+    [[DPRouter router] routeWithUrl:@"111"][@"data"] = @"数据";
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [[DPRouter router] openRouteUrl:@"111/save"];
+    });
+}
 @end

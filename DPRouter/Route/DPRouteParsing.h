@@ -13,12 +13,13 @@ NS_ASSUME_NONNULL_BEGIN
 @interface DPRouteParsing : NSObject
 - (instancetype)initWithUrlString:(NSString *)url;
 - (instancetype)initWithUrl:(NSURL *)url;
+
 @property (nonatomic, copy, readonly) NSString * url;
 @property (nonatomic, copy, readonly) NSString * scheme;
 @property (nonatomic, copy, readonly) NSString * pathComponents;
 @property (nonatomic, copy, readonly) NSArray * paths;
 @property (nonatomic, copy, readonly) NSString * parameterString;
-@property (nonatomic, strong, readonly) NSDictionary * parameters;
+@property (nonatomic, strong, readonly) NSMutableDictionary * parameters;
 
 - (void)reloadPaths:(NSArray *)paths;
 

@@ -334,8 +334,6 @@ static void modelSetWithArrayFunction(const void *value,void *context){
 
 @end
 
-NSString *dp_global_scheme = @"kdp_global_scheme";
-
 @interface DPRouter ()
 
 @property (nonatomic, strong) NSMutableDictionary <NSString *, DPRouterObjectCache *>* schemeMap;
@@ -384,6 +382,7 @@ DPRouterRouteMap * initRouteMap(DPRouter *self){
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         router = [DPRouter new];
+        
     });
     return router;
 }
@@ -392,10 +391,8 @@ DPRouterRouteMap * initRouteMap(DPRouter *self){
 {
     self = [super init];
     if (self) {
+        _globalScheme = [DPRouteScheme new];
         _routeNameMap = initRouteMap(self);
-        [self registerScheme:dp_global_scheme handle:^(DPRouteScheme * _Nonnull scheme) {
-            
-        }];
     }
     return self;
 }
@@ -414,13 +411,10 @@ DPRouterRouteMap * initRouteMap(DPRouter *self){
 
 - (void)registerScheme:(NSString *)scheme handle:(void (^)(DPRouteScheme * _Nonnull))handle{
     DPRouterObjectCache *cache = [self.schemeMap objectForKey:scheme];
-    
     if (!cache) {
         cache = [DPRouterObjectCache new];
         [self.schemeMap setObject:cache forKey:scheme];
         [self.mapChangeScheme addOriginalUrl:scheme mapUrl:@"" originalData:self.schemeMap.copy];
-    }else{
-        if ([scheme isEqualToString:dp_global_scheme])return;
     }
     DPRouteScheme *routeScheme = [DPRouteScheme new];
     routeScheme.name = scheme;
@@ -431,14 +425,12 @@ DPRouterRouteMap * initRouteMap(DPRouter *self){
 }
 
 - (void)changeRouteScheme:(NSString *)scheme handle:(void (^)(DPRouteScheme * _Nonnull))handle{
-    if ([scheme isEqualToString:dp_global_scheme])return;
     DPRouteScheme *routeScheme = [self schemeWithName:scheme];
     if (!routeScheme) return;
     [routeScheme setCurrentScheme];
 }
 
 - (void)deleteRouteScheme:(NSString *)scheme ifNeedInstead:(nonnull NSString *)needScheme{
-    if ([scheme isEqualToString:dp_global_scheme])return;
     DPRouteScheme *routeScheme = [self schemeWithName:scheme];
     if (!routeScheme) return;
     if (routeScheme == self.currentScheme) {
@@ -451,7 +443,14 @@ DPRouterRouteMap * initRouteMap(DPRouter *self){
 }
 
 - (void)openRouteUrl:(NSString *)url{
+    [self openRouteUrl:url withPara:@{}];
+}
+
+- (void)openRouteUrl:(NSString *)url withPara:(NSDictionary *)dic{
     DPRouteParsing * _parsing = [[DPRouteParsing alloc] initWithUrlString:url];
+    if (dic) {
+        [_parsing.parameters addEntriesFromDictionary:dic];
+    }
     DPRouteScheme *scheme = [self schemeWithName:_parsing.scheme];
     if (!scheme) {
         scheme = self.currentScheme;
@@ -462,7 +461,6 @@ DPRouterRouteMap * initRouteMap(DPRouter *self){
     [scheme setCurrentScheme];
     [self openParsing:_parsing];
 }
-
 
 - (DPBaseRoute *)getRouteByParsing:(DPRouteParsing *)parsing{
     //先去routeNameMap查询原始的路路由数据

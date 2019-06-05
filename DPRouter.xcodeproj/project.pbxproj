@@ -28,6 +28,7 @@
 		7309713D22A68547004394DA /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 7309713C22A68547004394DA /* Message.m */; };
 		7309714022A68667004394DA /* ViewControllerA.m in Sources */ = {isa = PBXBuildFile; fileRef = 7309713F22A68667004394DA /* ViewControllerA.m */; };
 		7309714322A68674004394DA /* ViewControllerB.m in Sources */ = {isa = PBXBuildFile; fileRef = 7309714222A68674004394DA /* ViewControllerB.m */; };
+		733A5CBF22A762DB008ABE8B /* RouteC.m in Sources */ = {isa = PBXBuildFile; fileRef = 733A5CBE22A762DB008ABE8B /* RouteC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,8 @@
 		7309713F22A68667004394DA /* ViewControllerA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllerA.m; sourceTree = "<group>"; };
 		7309714122A68674004394DA /* ViewControllerB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerB.h; sourceTree = "<group>"; };
 		7309714222A68674004394DA /* ViewControllerB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllerB.m; sourceTree = "<group>"; };
+		733A5CBD22A762DB008ABE8B /* RouteC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RouteC.h; sourceTree = "<group>"; };
+		733A5CBE22A762DB008ABE8B /* RouteC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RouteC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +112,7 @@
 				730970F522A67F00004394DA /* AppDelegate.m */,
 				7309711E22A68027004394DA /* A */,
 				7309711F22A6803A004394DA /* B */,
+				733A5CB822A76295008ABE8B /* C */,
 				730970F722A67F00004394DA /* ViewController.h */,
 				730970F822A67F00004394DA /* ViewController.m */,
 				7309712E22A68430004394DA /* JumpRoute */,
@@ -244,6 +248,47 @@
 			path = JumpRoute;
 			sourceTree = "<group>";
 		};
+		733A5CB822A76295008ABE8B /* C */ = {
+			isa = PBXGroup;
+			children = (
+				733A5CBC22A762C7008ABE8B /* Other */,
+				733A5CBB22A762C1008ABE8B /* C */,
+				733A5CBA22A762BE008ABE8B /* V */,
+				733A5CB922A762B9008ABE8B /* M */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		733A5CB922A762B9008ABE8B /* M */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		733A5CBA22A762BE008ABE8B /* V */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		733A5CBB22A762C1008ABE8B /* C */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		733A5CBC22A762C7008ABE8B /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				733A5CBD22A762DB008ABE8B /* RouteC.h */,
+				733A5CBE22A762DB008ABE8B /* RouteC.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -329,6 +374,7 @@
 				7309711922A67FBB004394DA /* DPRouter.m in Sources */,
 				7309711A22A67FBB004394DA /* NSObject+DPRoute.m in Sources */,
 				7309713422A6846D004394DA /* JumpCommon.m in Sources */,
+				733A5CBF22A762DB008ABE8B /* RouteC.m in Sources */,
 				7309712A22A68086004394DA /* RouteB.m in Sources */,
 				7309711822A67FBB004394DA /* DPRouteTuple.m in Sources */,
 				730970F622A67F00004394DA /* AppDelegate.m in Sources */,
@@ -474,6 +520,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5KQQLB9477;
 				INFOPLIST_FILE = DPRouter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -490,6 +537,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5KQQLB9477;
 				INFOPLIST_FILE = DPRouter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
