@@ -29,6 +29,7 @@
 		7309714022A68667004394DA /* ViewControllerA.m in Sources */ = {isa = PBXBuildFile; fileRef = 7309713F22A68667004394DA /* ViewControllerA.m */; };
 		7309714322A68674004394DA /* ViewControllerB.m in Sources */ = {isa = PBXBuildFile; fileRef = 7309714222A68674004394DA /* ViewControllerB.m */; };
 		733A5CBF22A762DB008ABE8B /* RouteC.m in Sources */ = {isa = PBXBuildFile; fileRef = 733A5CBE22A762DB008ABE8B /* RouteC.m */; };
+		733A5CC622A7C514008ABE8B /* Circyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 733A5CC522A7C514008ABE8B /* Circyle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,8 @@
 		7309714222A68674004394DA /* ViewControllerB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllerB.m; sourceTree = "<group>"; };
 		733A5CBD22A762DB008ABE8B /* RouteC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RouteC.h; sourceTree = "<group>"; };
 		733A5CBE22A762DB008ABE8B /* RouteC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RouteC.m; sourceTree = "<group>"; };
+		733A5CC422A7C514008ABE8B /* Circyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Circyle.h; sourceTree = "<group>"; };
+		733A5CC522A7C514008ABE8B /* Circyle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Circyle.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +247,8 @@
 				7309713922A68529004394DA /* SaveDataPre.m */,
 				7309713B22A68547004394DA /* Message.h */,
 				7309713C22A68547004394DA /* Message.m */,
+				733A5CC422A7C514008ABE8B /* Circyle.h */,
+				733A5CC522A7C514008ABE8B /* Circyle.m */,
 			);
 			path = JumpRoute;
 			sourceTree = "<group>";
@@ -374,6 +379,7 @@
 				7309711922A67FBB004394DA /* DPRouter.m in Sources */,
 				7309711A22A67FBB004394DA /* NSObject+DPRoute.m in Sources */,
 				7309713422A6846D004394DA /* JumpCommon.m in Sources */,
+				733A5CC622A7C514008ABE8B /* Circyle.m in Sources */,
 				733A5CBF22A762DB008ABE8B /* RouteC.m in Sources */,
 				7309712A22A68086004394DA /* RouteB.m in Sources */,
 				7309711822A67FBB004394DA /* DPRouteTuple.m in Sources */,

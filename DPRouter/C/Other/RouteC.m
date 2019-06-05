@@ -13,6 +13,7 @@
     return @"111";
 }
 - (void)setup{
+    
     [self registerUrl:@"save" handle:^BOOL(NSString * _Nonnull url, NSMutableDictionary * _Nonnull para, DPBaseRoute * _Nonnull route) {
         NSLog(@"%@",route[@"data"]);
         [route remove];
@@ -25,6 +26,13 @@
                 NSLog(@"从监听者回调的数据 %@",data);
             }];
         });
+        return YES;
+    }];
+    
+    self.isAllowedLoadOtherBusiness = YES;
+    
+    [self registerUrl:@"circyle" handle:^BOOL(NSString * _Nonnull url, NSMutableDictionary * _Nonnull para, DPBaseRoute * _Nonnull route) {
+        NSLog(@"循环中......");
         return YES;
     }];
 }

@@ -41,7 +41,7 @@
     [_dataSource addObject:[DPRouteDataModel text:@"映射" classString:@"JumpMapping"]];
     [_dataSource addObject:[DPRouteDataModel text:@"预存处消息" classString:@"SaveDataPre"]];
     [_dataSource addObject:[DPRouteDataModel text:@"消息传递与接收" classString:@"Message"]];
-    
+    [_dataSource addObject:[DPRouteDataModel text:@"循环派发" classString:@"Circyle"]];
     [self tableView];
     
     // Do any additional setup after loading the view.

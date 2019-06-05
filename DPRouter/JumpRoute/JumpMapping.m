@@ -10,8 +10,10 @@
 
 @implementation JumpMapping
 - (void)jumpMethod{
+    [[DPRouter router] routeMapOriginalUrl:@"E" map:@"F"];
     [[DPRouter router] routeMapOriginalUrl:@"B/C" map:@"E"];
     [[DPRouter router] openRouteUrl:@"B/C/bb"];
     [[DPRouter router] openRouteUrl:@"E/bb"];
+    [[DPRouter router] openRouteUrl:@"F/bb"];
 }
 @end
