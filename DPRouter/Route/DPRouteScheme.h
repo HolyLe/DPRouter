@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
-
+@class DPRouter;
 @interface DPRouteScheme : NSObject
 
 @property (nonatomic, copy) NSString * name;

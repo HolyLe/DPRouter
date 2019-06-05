@@ -17,6 +17,5 @@
         });
     }];
     [[DPRouter router] openRouteUrl:@"111/message"];
-    
 }
 @end
