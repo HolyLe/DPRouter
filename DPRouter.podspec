@@ -27,7 +27,6 @@ Pod::Spec.new do |s|
 
    s.source       = { :git => "https://github.com/HolyLe/DPRouter.git", :tag =>          s.version.to_s } 
 
-  s.public_header_files = 'DPRouter/Route/DPRouter.h'
   s.source_files  = "DPRouter/Route/*.{h,m}"
  
   s.requires_arc = true
